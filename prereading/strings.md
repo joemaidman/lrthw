@@ -41,8 +41,8 @@ Instead of using > "Hi there" + name
 
 ##Methods
 
-string.capitalize
-string.capitalize!
+######string.capitalize
+######string.capitalize!
 - returns a string with the first letter of the input string capitalised
 
 string.upcase/.downcase
