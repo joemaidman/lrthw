@@ -9,22 +9,22 @@ Manipulation at the objects lowest level
 
 ######Example:
 
- > myString = "I like Ruby"
- => "I like Ruby"
- > myString[3]
- => => "i"
- > myString[-3]
- => "u"
+ > myString = "I like Ruby"  
+ => "I like Ruby"  
+ > myString[3]  
+ => => "i"  
+ > myString[-3]  
+ => "u"  
 
 ######Example:
 
- >myString[3,6]
- => "ike Ru"
+ >myString[3,6]  
+ => "ike Ru"  
 
 ######Example:
 
- >myString[3..6]
- => "ike "
+ >myString[3..6]  
+ => "ike "  
 
 ##Interpolation
 Accessing variables inside strings, an alternative to simple concat (+).
@@ -34,15 +34,15 @@ Accessing variables inside strings, an alternative to simple concat (+).
 
 ######Example:
 
-> name = "Joe"
-> "Hi there #{name}"
-=> "Hi there Joe"
-Instead of using > "Hi there" + name
+> name = "Joe"  
+> "Hi there #{name}"  
+=> "Hi there Joe"  
+Instead of using > "Hi there" + name  
 
 ######Example:
 
-> "2 + 2 = #{2+2}"
-=> "2 + 2 = 4"
+> "2 + 2 = #{2+2}"  
+=> "2 + 2 = 4"  
 
 ##Methods
 
