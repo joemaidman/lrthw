@@ -1,0 +1,16 @@
+Strings
+
+Interpolation
+Accessing variables inside strings.
+
+- Only with double quotes (" "), not single.
+
+Example:
+> name = "Joe"
+> "Hi there #{name}"
+=> "Hi there Joe"
+Instead of using > "Hi there" + name
+
+Example:
+> "2 + 2 = #{2+2}"
+=> "2 + 2 = 4"
