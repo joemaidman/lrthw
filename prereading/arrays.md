@@ -22,7 +22,7 @@ An indexed collection of related items
  > names << "Bob"  
 => ["Joe","Sally","Bob"]  
 
-##Methods
+##Key Methods
 
 array.first / array.last
 ######Returns the first or last element.

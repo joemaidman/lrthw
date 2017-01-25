@@ -44,7 +44,7 @@ Instead of using > "Hi there" + name
 > "2 + 2 = #{2+2}"  
 => "2 + 2 = 4"  
 
-##Methods
+##Key Methods
 
 string.capitalize / string.capitalize!
 ######Returns a string with the first letter of the input string capitalised
