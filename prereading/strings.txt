@@ -1,13 +1,13 @@
-Strings
+#Strings
 
-Basic manipulation
+##Basic manipulation
 Manipulation at the objects lowest level
 
 - To retrieve nth character, use [] with zero base index and negative sign to start at the end of the string.
 - Can pass two numbers (e.g. [n,m]) to get m characters after the index n.
 - Or pass a range object to get characters between two indexes (e.g. [n..m]).
 
-Example:
+######Example:
  > myString = "I like Ruby"
  => "I like Ruby"
  > myString[3]
@@ -15,31 +15,31 @@ Example:
  > myString[-3]
  => "u"
 
- Example:
+ ######Example:
   >myString[3,6]
   => "ike Ru"
 
-  Example:
+  ######Example:
    >myString[3..6]
    => "ike "
 
-Interpolation
+##Interpolation
 Accessing variables inside strings, an alternative to simple concat (+).
 
 - Only with double quotes (" "), not single.
 - Automatically does string conversion too (i.e. no need to use .to_s).
 
-Example:
+######Example:
 > name = "Joe"
 > "Hi there #{name}"
 => "Hi there Joe"
 Instead of using > "Hi there" + name
 
-Example:
+######Example:
 > "2 + 2 = #{2+2}"
 => "2 + 2 = 4"
 
-Methods
+##Methods
 
 * string.capitalize
 * string.capitalize!
