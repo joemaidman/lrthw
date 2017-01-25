@@ -6,20 +6,20 @@ An indexed collection of related items
 
 ######Example:
 
-> names = ["Joe","Sally"]  
-> names[0]  
+ > names = ["Joe","Sally"]  
+ > names[0]  
 => "Joe"  
 
- ######Example:
+######Example:
 
-> empty_array = []  
+ > empty_array = []  
 => []  
-> another_empty_array = Array.new  
+ > another_empty_array = Array.new  
 => []  
 
 ######Example:
 
-> names << "Bob"  
+ > names << "Bob"  
 => ["Joe","Sally","Bob"]  
 
 ##Methods
