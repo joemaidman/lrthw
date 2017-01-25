@@ -4,7 +4,7 @@ Like a dictionary. Similar to an array but you can specify the indexes/keys you 
 
 ######Example:
 
- > ages = {}"Joe" => 31,"Sally" => 30, "Bob" => 50}  
+ > ages = {"Joe" => 31,"Sally" => 30, "Bob" => 50}  
 
 ######Example:
 
