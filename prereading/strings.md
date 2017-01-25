@@ -8,26 +8,22 @@ Manipulation at the objects lowest level
 - Or pass a range object to get characters between two indexes (e.g. [n..m]).
 
 ######Example:
+
  > myString = "I like Ruby"
-
  => "I like Ruby"
-
  > myString[3]
-
  => => "i"
-
  > myString[-3]
-
  => "u"
 
 ######Example:
- >myString[3,6]
 
+ >myString[3,6]
  => "ike Ru"
 
 ######Example:
- >myString[3..6]
 
+ >myString[3..6]
  => "ike "
 
 ##Interpolation
@@ -37,17 +33,15 @@ Accessing variables inside strings, an alternative to simple concat (+).
 - Automatically does string conversion too (i.e. no need to use .to_s).
 
 ######Example:
+
 > name = "Joe"
-
 > "Hi there #{name}"
-
 => "Hi there Joe"
-
 Instead of using > "Hi there" + name
 
 ######Example:
-> "2 + 2 = #{2+2}"
 
+> "2 + 2 = #{2+2}"
 => "2 + 2 = 4"
 
 ##Methods
