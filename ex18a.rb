@@ -6,3 +6,4 @@
 # 5) indent the lines inside the function by two spaces
 # 6) end the function with 'end'
 # 7) Functions that don't take any arguments don't need to be called with (), but it may make sense to include them fro readability.
+# 8) Can return things from it with the return keyword or it will just return the last expression anyway
