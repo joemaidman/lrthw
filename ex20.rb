@@ -30,7 +30,7 @@ puts "Now let's rewind, kind of like a tape, or craig david."
 # Call the rewind function, passing the variable current_file as the argument. This function will 'seek' back to the start of the file
 rewind(current_file)
 
-puts "Let's pring three lines:"
+puts "Let's print three lines:"
 # Declare a variable called current_line and set the value to 1
 current_line = 1
 # Call the print_a_line function
