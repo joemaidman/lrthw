@@ -8,7 +8,8 @@ end
 def boom
   puts "The bomb detonates, destroying the building and all inside."
 end
-
+puts File.read("dh_logo.txt")
+puts "\n"
 puts "Your radio crackles....\"Only 60 seconds until she blows John\"."
 puts "\"Thanks Powell\", you reply."
 puts "There's a suitcase in front of you. What do you do?"
