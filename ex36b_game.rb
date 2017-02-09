@@ -1,9 +1,14 @@
-# A text adventure. Structure based on https://www.gitbook.com/book/jsrn/make-your-first-text-adventure-in-ruby/details tutorial
+# Grail Quest, a text adventure by Joe Maidman. Structure based on https://www.gitbook.com/book/jsrn/make-your-first-text-adventure-in-ruby/details tutorial
+
+# Randomise the room location of the grail
 $prizeroom = [[*0..10].sample,[*0..10].sample]
+# Set game state to 0 = normal
+$gamestate = 0
+# Global objects (unitialised)
 $game
 $player
 $world
-$gamestate = 0
+
 class Player
   attr_accessor :hit_points, :attack_power
   attr_accessor :x_coord, :y_coord
@@ -26,6 +31,7 @@ class Player
 
   def heal(amount)
     @hit_points += amount
+    # Add to hit points but set the maximum to the stated level MAX_HIT_POINTS
     @hit_points = [@hit_points, MAX_HIT_POINTS].min
   end
 
@@ -45,24 +51,24 @@ class Item
   attr_accessor :type
 
   def initialize(grail = false)
+    # Ternary operator if statement CONDITION ? TRUE : FALSE
     grail == true ? (@type = :GRAIL) : (@type = TYPES.sample)
   end
 
   def interact(player)
     puts "----------"
     case @type
-    when :potion
-      puts "You take a #{self} (+10 HP to #{$player.hit_points})."
-      player.heal(10)
-    when :sword
-      puts "You take a #{self} (+1 AP to #{$player.attack_power})."
-      player.attack_power += 1
-    when :GRAIL
-      #need riddle to access the grail
-    puts "You found THE HOLY GRAIL!!!!"
-    puts File.read("gameart/holy_grail.txt")
-    puts "Now you need to escape back to the entrance at <0,0>."
-    $gamestate = 1
+      when :potion
+        puts "You take a #{self} (+10 HP to #{$player.hit_points})."
+        player.heal(10)
+      when :sword
+        puts "You take a #{self} (+1 AP to #{$player.attack_power})."
+        player.attack_power += 1
+      when :GRAIL
+        puts "You found THE HOLY GRAIL!!!!"
+        print_item_image
+        puts "Now you need to escape back to the entrance at <0,0>."
+        $gamestate = 1
     end
     puts "----------"
   end
@@ -82,6 +88,7 @@ class Bear
   #MAX_HIT_POINTS = 10
 
   def initialize
+    # Set enemy hit points to be random, but also realtive to the player's attack
     @hit_points = [$player.attack_power * 3 + [*1..10].sample, 10].max
     @initial_HP = @hit_points
     @attack_power = 1
@@ -142,6 +149,7 @@ W_WIDTH = 10
     puts "~~~~~~~~~~"
     puts " --Map--"
     puts "~~~~~~~~~~"
+    # Loop through the size of the array and print the map
     index_row = 0
     W_WIDTH.times do
       index_col = 0
@@ -151,9 +159,9 @@ W_WIDTH = 10
         elsif !@rooms[index_row][index_col].nil?
           index_col == 9 ? (puts "O") : (print "O")
         else
-        index_col == 9 ? (puts "X") : (print "X")
-      end
-        index_col +=1
+          index_col == 9 ? (puts "X") : (print "X")
+        end
+      index_col +=1
       end
       index_row += 1
     end
@@ -207,6 +215,7 @@ W_WIDTH = 10
   end
 
   def get_rooms_of(entity)
+    # Return the current room of the player, or create a new one if there isn't one
    @rooms[entity.y_coord][entity.x_coord] ||= Room.new
   end
 end
@@ -246,6 +255,7 @@ class Room
   def interact(player)
     if @content
       @content.interact(player)
+      # IMPORTANT LINE: Sets room content to nil once it has been taken/is dead
       @content = nil
     end
   end
@@ -281,7 +291,7 @@ class Game
 
     start_game
   end
-
+  # Private methods
   private
   def start_game
     puts File.read("gameart/logo.txt")
