@@ -52,10 +52,10 @@ class Item
     puts "----------"
     case @type
     when :potion
-      puts "You take a #{self} (+10 HP)."
+      puts "You take a #{self} (+10 HP to #{$player.hit_points})."
       player.heal(10)
     when :sword
-      puts "You take a #{self} (+1 AP)."
+      puts "You take a #{self} (+1 AP to #{$player.attack_power})."
       player.attack_power += 1
     when :GRAIL
       #need riddle to access the grail
@@ -77,12 +77,13 @@ class Item
 end
 
 class Bear
-  attr_accessor :hit_points, :attack_power
+  attr_accessor :hit_points, :attack_power, :initial_HP
 
-  MAX_HIT_POINTS = 10
+  #MAX_HIT_POINTS = 10
 
   def initialize
-    @hit_points = MAX_HIT_POINTS
+    @hit_points = [$player.attack_power * 3 + [*1..10].sample, 10].max
+    @initial_HP = @hit_points
     @attack_power = 1
   end
 
@@ -106,7 +107,7 @@ class Bear
       playerHit = player.attack_power + [*0..10].sample
       hurt(playerHit)
       # Display damage and how much health the enemy has
-      puts "You hit the bear for #{playerHit} points. (HP: #{[@hit_points, 0].max}/ #{MAX_HIT_POINTS})"
+      puts "You hit the bear for #{playerHit} points. (HP: #{[@hit_points, 0].max}/ #{@initial_HP})"
       sleep(1)
       #Get the enemies hit points and add a random amount between 0 and 5
       enemyHit = player.attack_power + [*0..5].sample
