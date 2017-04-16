@@ -3,7 +3,8 @@
 Learning Ruby with Zed A. Shaw's [Learn Ruby the Hard Way](https://learnrubythehardway.org/). This repository stores workings/exercises from the course.
 
 ## Exercise 36b_game.rb
-```___           _ _     ____                 _
+```
+   ___           _ _     ____                 _
   / _ \_ __ __ _(_) |   /___ \_   _  ___  ___| |_
  / /_\/ '__/ _` | | |  //  / / | | |/ _ \/ __| __|
 / /_\\| | | (_| | | | / \_/ /| |_| |  __/\__ \ |_
